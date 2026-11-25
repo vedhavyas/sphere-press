@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sphere Press - Large Print Coloring Books for Adults and Seniors</title>
+<meta name="description" content="Sphere Press publishes original large-print coloring books for adults and seniors, plus big-and-simple coloring books for toddlers. Bold lines, simple shapes, one design per page. Try a free 10-page sampler.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+  :root {
+    --cream: #f7f3ec;
+    --paper: #fffdf9;
+    --ink: #2f2a26;
+    --muted: #6b6158;
+    --accent: #a34a2a;
+    --accent-dark: #7f3820;
+    --line: #e6ddd0;
+    --radius: 14px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, .brand {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  a { color: var(--accent-dark); }
+  img { max-width: 100%; display: block; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 22px; }
+
+  header.site {
+    padding: 26px 0 8px;
+    border-bottom: 1px solid var(--line);
+  }
+  .brand {
+    font-size: 1.7rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  .brand span { color: var(--accent); }
+  .tagline { margin: 4px 0 0; color: var(--muted); font-size: 0.95rem; }
+
+  .hero { padding: 54px 0 34px; }
+  .hero h1 { font-size: clamp(2rem, 5vw, 3.1rem); margin: 0 0 16px; max-width: 18ch; }
+  .hero p { max-width: 58ch; font-size: 1.12rem; margin: 0 0 26px; color: #443b34; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    display: inline-block;
+    padding: 13px 22px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    border: 2px solid var(--accent);
+  }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
+  .btn-ghost { color: var(--accent-dark); background: transparent; }
+  .btn-ghost:hover { background: #f0e6d9; }
+
+  .sampler {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 30px;
+    margin: 10px 0 46px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 22px;
+    align-items: center;
+  }
+  .sampler h2 { margin: 0 0 8px; font-size: 1.5rem; }
+  .sampler p { margin: 0; color: var(--muted); max-width: 60ch; }
+  .sampler .buttons { justify-content: flex-end; }
+
+  section.catalogue { padding: 8px 0 18px; }
+  section.catalogue h2 {
+    font-size: 1.65rem;
+    margin: 34px 0 6px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--line);
+  }
+  section.catalogue h2:first-of-type { margin-top: 0; }
+  .section-note { color: var(--muted); margin: 0 0 22px; font-size: 0.98rem; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 22px;
+    margin: 0 0 8px;
+  }
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 10px 26px rgba(47,42,38,.12); }
+  .card img {
+    width: 100%;
+    aspect-ratio: 8.5 / 11;
+    object-fit: cover;
+    background: #fff;
+  }
+  .card-body { padding: 14px 16px 18px; display: flex; flex-direction: column; flex: 1; }
+  .card h3 { font-size: 1.02rem; margin: 0 0 6px; }
+  .card .sub { color: var(--muted); font-size: 0.86rem; margin: 0 0 12px; flex: 1; }
+  .card .price { font-weight: 700; font-size: 0.95rem; margin: 0 0 10px; }
+  .card .link {
+    font-weight: 600;
+    font-size: 0.92rem;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    align-self: flex-start;
+  }
+  .card .link:hover { border-bottom-color: var(--accent); }
+
+  .about {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 30px;
+    margin: 44px 0 40px;
+  }
+  .about h2 { margin: 0 0 12px; font-size: 1.5rem; }
+  .about p { margin: 0 0 12px; color: #443b34; }
+  .about p:last-child { margin-bottom: 0; }
+
+  footer.site {
+    border-top: 1px solid var(--line);
+    padding: 26px 0 40px;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  footer.site p { margin: 0 0 6px; }
+
+  @media (max-width: 640px) {
+    .sampler { grid-template-columns: 1fr; }
+    .sampler .buttons { justify-content: flex-start; }
+    .hero { padding: 38px 0 26px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <p class="brand">Sphere <span>Press</span></p>
+    <p class="tagline">Original large-print coloring books, made for relaxed and strain-free coloring.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <h1>Large Print Coloring Books for Adults and Seniors</h1>
+    <p>Bold lines. Simple shapes. One design per page. Our books are drawn for comfortable coloring at any age, with large, open areas that are easy to see and easy to fill. Every page is reviewed by hand.</p>
+    <div class="buttons">
+      <a class="btn btn-primary" href="#books">Browse the books</a>
+      <a class="btn btn-ghost" href="assets/Large-Print-Horses-10-page-sampler.pdf">Free 10-page sampler</a>
+    </div>
+  </section>
+
+  <section class="sampler" id="sampler">
+    <div>
+      <h2>Try before you buy</h2>
+      <p>Download a free 10-page sampler from our Large Print Horses book. Print it at home and see how the pages feel in your hands. No sign-up, no email, just the PDF.</p>
+    </div>
+    <div class="buttons">
+      <a class="btn btn-primary" href="assets/Large-Print-Horses-10-page-sampler.pdf">Download the PDF</a>
+      <a class="btn btn-ghost" href="assets/Large-Print-Horses-10-page-sampler-png.zip">PNG pages</a>
+    </div>
+  </section>
+
+  <section class="catalogue" id="books">
+    <h2>Large Print for Adults and Seniors</h2>
+    <p class="section-note">50 designs per book, single-sided pages, 8.5 x 11 inches. Available in paperback on Amazon.</p>
+
+    <div class="grid">
+      <article class="card">
+        <img src="covers/christmas.jpg" alt="Large Print Christmas Coloring Book cover" loading="lazy">
+        <div class="card-body">
+          <h3>Large Print Christmas Coloring Book</h3>
+          <p class="sub">50 simple, bold and easy holiday designs for relaxation.</p>
+          <p class="price">$12.99</p>
+          <a class="link" href="https://www.amazon.com/dp/B0HNGXJGBV" target="_blank" rel="noopener">View on Amazon &rarr;</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="covers/winter.jpg" alt="Large Print Winter Coloring Book cover" loading="lazy">
+        <div class="card-body">
+          <h3>Large Print Winter Coloring Book</h3>
+          <p class="sub">50 simple, bold and easy cozy winter designs.</p>
+          <p class="price">$12.99</p>
+          <a class="link" href="https://www.amazon.com/dp/B0HNGXPV8M" target="_blank" rel="noopener">View on Amazon &rarr;</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="covers/cozy-christmas-village.jpg" alt="Cozy Christmas Village Coloring Book cover" loading="lazy">
+        <div class="card-body">
+          <h3>Cozy Christmas Village Coloring Book</h3>
+          <p class="sub">50 large print single-sided village designs.</p>
+          <p class="price">$12.99</p>
+          <a class="link" href="https://www.amazon.com/dp/B0HPZF578H" target="_blank" rel="noopener">View on Amazon &rarr;</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="covers/christmas-gnomes.jpg" alt="Christmas Gnomes Coloring Book cover" loading="lazy">
+        <div class="card-body">
+          <h3>Christmas Gnomes Coloring Book</h3>
+          <p class="sub">50 large print cozy gnome scenes and holiday cheer.</p>
+          <p class="price">$9.99</p>
+          <a class="link" href="https://www.amazon.com/dp/B0HQVV2P19" target="_blank" rel="noopener">View on Amazon &rarr;</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="covers/winter-animals.jpg" alt="Winter Animals Coloring Book cover" loading="lazy">
+        <div class="card-body">
+          <h3>Winter Animals Coloring Book</h3>
+          <p class="sub">50 large print woodland animals in snowy scenes.</p>
+          <p class="price">$9.99</p>
+          <a class="link" href="https://www.amazon.com/dp/B0HQWL47CZ" target="_blank" rel="noopener">View on Amazon &rarr;</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="covers/backyard-birds.jpg" alt="Backyard Birds Coloring Book cover" loading="lazy">
+        <div class="card-body">
+          <h3>Backyard Birds Coloring Book</h3>
+          <p class="sub">50 large print garden birds for relaxation and stress relief.</p>
+          <p class="price">$9.99</p>
+          <a class="link" href="https://www.amazon.com/dp/B0HRQX18L9" target="_blank" rel="noopener">View on Amazon &rarr;</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="covers/horses.jpg" alt="Large Print Horses Coloring Book cover" loading="lazy">
+        <div class="card-body">
+          <h3>Large Print Horses Coloring Book</h3>
+          <p class="sub">50 simple, bold and easy horse designs for relaxation.</p>
+          <p class="price">$9.99</p>
+          <a class="link" href="https://www.amazon.com/dp/B0HSKGS3QS" target="_blank" rel="noopener">View on Amazon &rarr;</a>
+        </div>
+      </article>
+    </div>
+
+    <h2>Big and Simple for Toddlers</h2>
+    <p class="section-note">Thick outlines and big pictures for little hands, ages 1 to 3.</p>
+
+    <div class="grid">
+      <article class="card">
+        <img src="covers/construction.jpg" alt="Construction Vehicles Coloring Book cover" loading="lazy">
+        <div class="card-body">
+          <h3>Construction Vehicles Coloring Book</h3>
+          <p class="sub">50 big and simple diggers, dump trucks and more.</p>
+          <p class="price">$9.99</p>
+          <a class="link" href="https://www.amazon.com/dp/B0HNW5JG23" target="_blank" rel="noopener">View on Amazon &rarr;</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="covers/tractor.jpg" alt="Tractor Coloring Book cover" loading="lazy">
+        <div class="card-body">
+          <h3>Tractor Coloring Book</h3>
+          <p class="sub">50 big and simple farm tractors, barns and animals.</p>
+          <p class="price">$9.99</p>
+          <a class="link" href="https://www.amazon.com/dp/B0HPBB18DX" target="_blank" rel="noopener">View on Amazon &rarr;</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="covers/fire-truck.jpg" alt="Fire Truck Coloring Book cover" loading="lazy">
+        <div class="card-body">
+          <h3>Fire Truck Coloring Book</h3>
+          <p class="sub">50 big and simple fire engines, ladders and hydrants.</p>
+          <p class="price">$9.99</p>
+          <a class="link" href="https://www.amazon.com/dp/B0HQDDMLWR" target="_blank" rel="noopener">View on Amazon &rarr;</a>
+        </div>
+      </article>
+    </div>
+
+    <h2>Grief and Reflection</h2>
+    <p class="section-note">A guided journal for the harder seasons.</p>
+
+    <div class="grid">
+      <article class="card">
+        <img src="covers/losing-dad.jpg" alt="Losing Dad guided grief journal cover" loading="lazy">
+        <div class="card-body">
+          <h3>Losing Dad: A Guided Grief Journal</h3>
+          <p class="sub">100 days of prompts for men who have lost their father.</p>
+          <p class="price">$12.99</p>
+          <a class="link" href="https://www.amazon.com/dp/B0HPB91PVD" target="_blank" rel="noopener">View on Amazon &rarr;</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <h2>About Sphere Press</h2>
+    <p>Sphere Press is an independent publishing imprint. We make original large-print coloring books for adults and seniors, big-and-simple coloring books for toddlers, and the occasional guided journal. Every book is designed, drawn and reviewed by hand before it goes to print.</p>
+    <p>Our illustrations are created with AI assistance and reviewed page by page. We keep the lines bold, the shapes simple and the pages single-sided, so the books are comfortable to use at any age.</p>
+    <p>Prices and availability may change. Prices shown are in US dollars.</p>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p>&copy; 2026 Sphere Press. All rights reserved.</p>
+    <p>Sphere Press is an independent publishing imprint.</p>
+  </div>
+</footer>
+
+</body>
+</html>
